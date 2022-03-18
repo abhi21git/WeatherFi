@@ -204,7 +204,9 @@
                         <outlet property="bottomStackView" destination="uKT-hl-Ki4" id="wFU-iN-mwv"/>
                         <outlet property="humudityLabel" destination="omT-Pk-eV5" id="JO2-we-pRB"/>
                         <outlet property="imageContainerView" destination="NkF-9f-Cew" id="L8I-Mc-gud"/>
+                        <outlet property="locationButton" destination="huv-h0-OpT" id="ovM-ZR-wx2"/>
                         <outlet property="midStackView" destination="AL1-Ob-K1Z" id="CEg-DE-hee"/>
+                        <outlet property="searchButton" destination="oJq-cw-Us4" id="gmz-Eq-ZIf"/>
                         <outlet property="temperatureLabel" destination="k7Q-TG-uYc" id="LHy-DD-8lo"/>
                         <outlet property="timeLabel" destination="scw-cY-XoH" id="Sq9-4i-9dF"/>
                         <outlet property="visibilityLabel" destination="ea9-QJ-dPn" id="e3Y-06-Vr3"/>

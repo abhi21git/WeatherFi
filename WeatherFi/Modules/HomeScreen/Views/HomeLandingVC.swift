@@ -23,11 +23,14 @@ class HomeLandingVC: BaseViewController {
     @IBOutlet weak var visibilityLabel: UILabel!
     @IBOutlet weak var midStackView: UIStackView!
     @IBOutlet weak var bottomStackView: UIStackView!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
     
     //MARK: - Properties
     fileprivate var homeVM = HomeViewModel()
     fileprivate var locationManager = CLLocationManager()
 
+    var newLocation: Location?
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -37,8 +40,7 @@ class HomeLandingVC: BaseViewController {
         super.viewDidLoad()
 
         setupUI()
-        setupInitialData()
-        fetchData()
+        fetchData(skipLocationRequest: newLocation != nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,13 +77,14 @@ class HomeLandingVC: BaseViewController {
     
     //MARK: - Methods
     private func setupUI() {
-        
+        searchButton.isHidden = newLocation != nil
+        locationButton.isHidden = newLocation != nil
     }
     
     //MARK: Location handling
     private func setupLocation() {
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
 
         switch locationManager.authorizationStatus {
             
@@ -94,6 +97,7 @@ class HomeLandingVC: BaseViewController {
                 return
             }
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.pausesLocationUpdatesAutomatically = true
             locationManager.startUpdatingLocation()
             
         case .restricted, .denied:
@@ -104,20 +108,11 @@ class HomeLandingVC: BaseViewController {
             break
         }
     }
-    
-    private func setupInitialData() {
-        timeLabel.text = "Fetching..."
-        temperatureLabel.isHidden = true
-        imageContainerView.isHidden = true
-        weatherLabel.isHidden = true
-        airPressureLabel.isHidden = true
-        humudityLabel.isHidden = true
-        visibilityLabel.isHidden = true
-    }
 
-    //MARK: - Data fetching
-    fileprivate func fetchData(_ locationNotAvailable: Bool = false) {
-        guard isLocationAvailable() || locationNotAvailable else {
+    //MARK: Data fetching
+    fileprivate func fetchData(skipLocationRequest: Bool = false) {
+        setupInitialData()
+        guard isLocationAvailable() || skipLocationRequest else {
             setupLocation()
             return
         }
@@ -130,13 +125,26 @@ class HomeLandingVC: BaseViewController {
         }
     }
     
+    private func setupInitialData() {
+        timeLabel.text = "Fetching..."
+        temperatureLabel.isHidden = true
+        imageContainerView.isHidden = true
+        weatherLabel.isHidden = true
+        airPressureLabel.isHidden = true
+        humudityLabel.isHidden = true
+        visibilityLabel.isHidden = true
+        if let newLocation = newLocation {
+            homeVM.currentLocation = newLocation
+        }
+    }
+    
     //MARK: Data handling
     private func setupData() {
         weatherLabel.text = homeVM.weatherData.weather.first?.main ?? ""
         temperatureLabel.text = " \(homeVM.weatherData.mainData.temperature)°"
         airPressureLabel.text = "\(homeVM.weatherData.mainData.pressure) mBar"
         humudityLabel.text = "\(homeVM.weatherData.mainData.humidity)%"
-        visibilityLabel.text = "\(homeVM.weatherData.visibility/1000)Km"
+        visibilityLabel.text = "\(homeVM.weatherData.visibility/1000) KM"
         
         let date = NSDate(timeIntervalSince1970: homeVM.weatherData.date)
         let dateFormatter = DateFormatter()
@@ -166,7 +174,7 @@ class HomeLandingVC: BaseViewController {
     private func openPermissionAlert() {
         let alertController = UIAlertController(title: "TITLE", message: "Please go to Settings and turn on the permissions", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
-            self.fetchData(true)
+            self.fetchData(skipLocationRequest: true)
         }))
         alertController.addAction(UIAlertAction(title: "Settings", style: .default) { _ in
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(settingsUrl) else { return }
@@ -182,11 +190,15 @@ class HomeLandingVC: BaseViewController {
 
 //MARK: - HomeLandingVC Extension
 extension HomeLandingVC: CLLocationManagerDelegate {
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            homeVM.currentLocation = (location.coordinate.latitude, location.coordinate.longitude)
-            fetchData()
-        }
+        guard let location = locations.first  else { return }
+        homeVM.currentLocation = (location.coordinate.latitude, location.coordinate.longitude)
+        fetchData()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
