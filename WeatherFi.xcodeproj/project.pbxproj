@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		13185F2027E1103B00F7BBFD /* HomeLandingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13185F1F27E1103B00F7BBFD /* HomeLandingVC.storyboard */; };
 		13185F2327E1109400F7BBFD /* HomeLandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13185F2227E1109400F7BBFD /* HomeLandingVC.swift */; };
+		13185F2A27E119B900F7BBFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13185F2927E119B900F7BBFD /* Constants.swift */; };
+		137E205E27E23FDA00AA4FF1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 137E205D27E23FDA00AA4FF1 /* Alamofire */; };
+		137E206127E23FF100AA4FF1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 137E206027E23FF100AA4FF1 /* Kingfisher */; };
+		137E206427E2403200AA4FF1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E206327E2403200AA4FF1 /* UIImageView+Extension.swift */; };
+		137E206827E2407500AA4FF1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E206727E2407500AA4FF1 /* NetworkManager.swift */; };
+		137E206A27E3177B00AA4FF1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E206927E3177B00AA4FF1 /* HomeViewModel.swift */; };
+		137E206C27E317C700AA4FF1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E206B27E317C700AA4FF1 /* BaseViewController.swift */; };
+		137E206E27E32E4F00AA4FF1 /* HomeWeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E206D27E32E4F00AA4FF1 /* HomeWeatherDataModel.swift */; };
+		137E207027E4CD1900AA4FF1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E206F27E4CD1900AA4FF1 /* UIColor+Extension.swift */; };
 		13CC3B1E27E10B54008F9293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC3B1D27E10B54008F9293 /* AppDelegate.swift */; };
 		13CC3B2027E10B54008F9293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC3B1F27E10B54008F9293 /* SceneDelegate.swift */; };
 		13CC3B2727E10B59008F9293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CC3B2627E10B59008F9293 /* Assets.xcassets */; };
@@ -18,6 +27,13 @@
 /* Begin PBXFileReference section */
 		13185F1F27E1103B00F7BBFD /* HomeLandingVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeLandingVC.storyboard; sourceTree = "<group>"; };
 		13185F2227E1109400F7BBFD /* HomeLandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLandingVC.swift; sourceTree = "<group>"; };
+		13185F2927E119B900F7BBFD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		137E206327E2403200AA4FF1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		137E206727E2407500AA4FF1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		137E206927E3177B00AA4FF1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		137E206B27E317C700AA4FF1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		137E206D27E32E4F00AA4FF1 /* HomeWeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherDataModel.swift; sourceTree = "<group>"; };
+		137E206F27E4CD1900AA4FF1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		13CC3B1A27E10B54008F9293 /* WeatherFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13CC3B1D27E10B54008F9293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13CC3B1F27E10B54008F9293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137E206127E23FF100AA4FF1 /* Kingfisher in Frameworks */,
+				137E205E27E23FDA00AA4FF1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +94,7 @@
 		13185F2527E1113100F7BBFD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				137E206D27E32E4F00AA4FF1 /* HomeWeatherDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,6 +102,7 @@
 		13185F2627E1113A00F7BBFD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				137E206927E3177B00AA4FF1 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -95,6 +115,40 @@
 				13CC3B2827E10B59008F9293 /* LaunchScreen.storyboard */,
 			);
 			name = SupportFiles;
+			sourceTree = "<group>";
+		};
+		13185F2827E1199C00F7BBFD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				137E206B27E317C700AA4FF1 /* BaseViewController.swift */,
+				13185F2927E119B900F7BBFD /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		137E206227E2401600AA4FF1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				137E206327E2403200AA4FF1 /* UIImageView+Extension.swift */,
+				137E206F27E4CD1900AA4FF1 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		137E206527E2405500AA4FF1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				137E206627E2406300AA4FF1 /* NetworkManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		137E206627E2406300AA4FF1 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				137E206727E2407500AA4FF1 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		13CC3B1127E10B53008F9293 = {
@@ -118,6 +172,9 @@
 			children = (
 				13185F1B27E10F6B00F7BBFD /* AppDelegate */,
 				13185F1E27E1102600F7BBFD /* Modules */,
+				137E206527E2405500AA4FF1 /* Managers */,
+				13185F2827E1199C00F7BBFD /* Common */,
+				137E206227E2401600AA4FF1 /* Extensions */,
 				13185F2727E1122700F7BBFD /* SupportFiles */,
 			);
 			path = WeatherFi;
@@ -139,6 +196,10 @@
 			dependencies = (
 			);
 			name = WeatherFi;
+			packageProductDependencies = (
+				137E205D27E23FDA00AA4FF1 /* Alamofire */,
+				137E206027E23FF100AA4FF1 /* Kingfisher */,
+			);
 			productName = WeatherFi;
 			productReference = 13CC3B1A27E10B54008F9293 /* WeatherFi.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +228,10 @@
 				Base,
 			);
 			mainGroup = 13CC3B1127E10B53008F9293;
+			packageReferences = (
+				137E205C27E23FDA00AA4FF1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				137E205F27E23FF100AA4FF1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 13CC3B1B27E10B54008F9293 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,9 +259,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137E206827E2407500AA4FF1 /* NetworkManager.swift in Sources */,
+				137E206427E2403200AA4FF1 /* UIImageView+Extension.swift in Sources */,
+				137E206A27E3177B00AA4FF1 /* HomeViewModel.swift in Sources */,
 				13CC3B1E27E10B54008F9293 /* AppDelegate.swift in Sources */,
 				13CC3B2027E10B54008F9293 /* SceneDelegate.swift in Sources */,
+				137E206C27E317C700AA4FF1 /* BaseViewController.swift in Sources */,
+				137E206E27E32E4F00AA4FF1 /* HomeWeatherDataModel.swift in Sources */,
 				13185F2327E1109400F7BBFD /* HomeLandingVC.swift in Sources */,
+				13185F2A27E119B900F7BBFD /* Constants.swift in Sources */,
+				137E207027E4CD1900AA4FF1 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +482,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		137E205C27E23FDA00AA4FF1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		137E205F27E23FF100AA4FF1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		137E205D27E23FDA00AA4FF1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 137E205C27E23FDA00AA4FF1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		137E206027E23FF100AA4FF1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 137E205F27E23FF100AA4FF1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 13CC3B1227E10B53008F9293 /* Project object */;
 }
