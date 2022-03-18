@@ -8,10 +8,11 @@
 import Foundation
 
 class HomeViewModel: AlamoServiceProtocol {
+    var currentLocation = Constants.fallBackLocation()
     var weatherData = HomeWeatherDataModel()
     
-    func fetchWeather(for loc: Location = Constants.fallBackLocation(), completion: ((Bool) -> Void)? = nil) {
-        request(for: HomeWeatherDataModel.self, with: .dataUrl(lac: loc)) { [weak self] result in
+    func fetchWeather(completion: ((Bool) -> Void)? = nil) {
+        request(for: HomeWeatherDataModel.self, with: .dataUrl(lac: currentLocation)) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.weatherData = data

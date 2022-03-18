@@ -13,7 +13,7 @@ struct HomeWeatherDataModel: Decodable {
     let base: String
     let mainData: MainWeatherData
     let visibility: Int
-    let date: Int
+    let date: Double
     let name: String
     
     enum CodingKeys: String, CodingKey {

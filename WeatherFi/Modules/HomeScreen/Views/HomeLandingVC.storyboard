@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home LandingVC-->
+        <!--HomeLandingVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="HomeLandingVC" customModule="WeatherFi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HomeLandingVC" id="Y6W-OH-hqX" customClass="HomeLandingVC" customModule="WeatherFi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,6 +27,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Choose location" image="location.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="locationButtonAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wCW-5E-qoJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Report" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moB-UT-LYr">
                                 <rect key="frame" x="20" y="72" width="310" height="28"/>
@@ -34,43 +37,51 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AL1-Ob-K1Z" userLabel="Mid Stack View">
-                                <rect key="frame" x="20" y="205" width="374" height="396.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AL1-Ob-K1Z" userLabel="Mid Stack View">
+                                <rect key="frame" x="20" y="204.5" width="374" height="397"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:40 AM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scw-cY-XoH">
-                                        <rect key="frame" x="119.5" y="0.0" width="135.5" height="37"/>
+                                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:40 AM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="scw-cY-XoH">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="37"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="slO-nx-vu8">
-                                        <rect key="frame" x="93.5" y="45.5" width="187" height="186.5"/>
-                                        <color key="tintColor" systemColor="systemOrangeColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="slO-nx-vu8" secondAttribute="height" multiplier="1:1" id="2ER-4m-vm6"/>
-                                        </constraints>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="spU-O5-G1e">
-                                        <rect key="frame" x="101" y="244" width="172" height="152.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NkF-9f-Cew">
+                                        <rect key="frame" x="0.0" y="47" width="374" height="187"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW3-v9-3yP">
-                                                <rect key="frame" x="0.0" y="0.0" width="172" height="37"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="32"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 32°" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7Q-TG-uYc">
-                                                <rect key="frame" x="0.0" y="42" width="172" height="110.5"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="96"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="slO-nx-vu8">
+                                                <rect key="frame" x="93.5" y="-1.5" width="187" height="186.5"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="slO-nx-vu8" secondAttribute="height" multiplier="1:1" id="2ER-4m-vm6"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="slO-nx-vu8" secondAttribute="bottom" id="L33-wB-rg2"/>
+                                            <constraint firstItem="slO-nx-vu8" firstAttribute="width" relation="lessThanOrEqual" secondItem="NkF-9f-Cew" secondAttribute="width" multiplier="0.5" id="PcS-XI-wxt"/>
+                                            <constraint firstItem="slO-nx-vu8" firstAttribute="centerX" secondItem="NkF-9f-Cew" secondAttribute="centerX" id="QHK-dD-b5N"/>
+                                            <constraint firstItem="slO-nx-vu8" firstAttribute="top" secondItem="NkF-9f-Cew" secondAttribute="top" id="Z5X-Jq-Ja2"/>
+                                        </constraints>
+                                    </view>
+                                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW3-v9-3yP">
+                                        <rect key="frame" x="0.0" y="244" width="374" height="37"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 88.88°" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k7Q-TG-uYc">
+                                        <rect key="frame" x="0.0" y="291" width="374" height="106"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="92"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="slO-nx-vu8" firstAttribute="width" secondItem="AL1-Ob-K1Z" secondAttribute="width" multiplier="0.5" id="VUG-mg-wNu"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uKT-hl-Ki4" userLabel="Bottom Stack View">
                                 <rect key="frame" x="20" y="716.5" width="374" height="81.5"/>
@@ -159,6 +170,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchButtonAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="67N-hm-uxX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -185,6 +199,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="fqP-dl-3jB"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="airPressureLabel" destination="BJ8-Sa-pbk" id="yHv-Zn-YbD"/>
+                        <outlet property="bottomStackView" destination="uKT-hl-Ki4" id="wFU-iN-mwv"/>
+                        <outlet property="humudityLabel" destination="omT-Pk-eV5" id="JO2-we-pRB"/>
+                        <outlet property="imageContainerView" destination="NkF-9f-Cew" id="L8I-Mc-gud"/>
+                        <outlet property="midStackView" destination="AL1-Ob-K1Z" id="CEg-DE-hee"/>
+                        <outlet property="temperatureLabel" destination="k7Q-TG-uYc" id="LHy-DD-8lo"/>
+                        <outlet property="timeLabel" destination="scw-cY-XoH" id="Sq9-4i-9dF"/>
+                        <outlet property="visibilityLabel" destination="ea9-QJ-dPn" id="e3Y-06-Vr3"/>
+                        <outlet property="weatherIconImageView" destination="slO-nx-vu8" id="iy0-vb-Orv"/>
+                        <outlet property="weatherLabel" destination="uW3-v9-3yP" id="e0n-wU-41f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
