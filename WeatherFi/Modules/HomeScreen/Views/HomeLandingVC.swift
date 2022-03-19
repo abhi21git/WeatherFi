@@ -153,7 +153,7 @@ class HomeLandingVC: BaseViewController {
         dateFormatter.dateFormat = "hh:mm a"
         dateFormatter.timeZone = TimeZone.current
         let dateString = dateFormatter.string(from: date as Date)
-        timeLabel.text = homeVM.weatherData.name + " (upadated at " + dateString + ")"
+        timeLabel.text = homeVM.weatherData.name + " (updated at " + dateString + ")"
         
         if let icon = homeVM.weatherData.weather.first?.icon {
             weatherIconImageView.setImage(with: NetworkConstants.imageUrl(icon: icon).getUrl())

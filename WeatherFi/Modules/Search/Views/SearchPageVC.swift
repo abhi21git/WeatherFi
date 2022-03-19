@@ -102,6 +102,7 @@ class SearchPageVC: BaseViewController {
         do {
             let defaults = UserDefaults.standard
             var history = getSearchHistory()
+            guard !history.contains(where: { $0.latitude == query.latitude && $0.longitude == query.longitude }) else { return }
             history.append(query)
             history = history.suffix(5)
             try defaults.encode(history, forKey:Constants.searchHistory.rawValue)
@@ -150,9 +151,14 @@ extension SearchPageVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let location: Location = (searchVM.searchData[indexPath.row].latitude, searchVM.searchData[indexPath.row].longitude)
-        openDetailPage(for: (location))
-        saveSearchHistory(of: searchVM.searchData[indexPath.row])
+        if searchVM.searchData.isEmpty {
+            let location: Location = (getSearchHistory()[indexPath.row].latitude, getSearchHistory()[indexPath.row].longitude)
+            openDetailPage(for: (location))
+        } else {
+            saveSearchHistory(of: searchVM.searchData[indexPath.row])
+            let location: Location = (searchVM.searchData[indexPath.row].latitude, searchVM.searchData[indexPath.row].longitude)
+            openDetailPage(for: (location))
+        }
     }
 
 }
