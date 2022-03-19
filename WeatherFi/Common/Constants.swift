@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: Type alias'
+// MARK: Type alias
 typealias Location = (latitude: Double, longitude: Double)
 
 // MARK: App Constants
@@ -18,6 +18,8 @@ enum Constants: String {
         return (21.1458, 79.0882)
     }
 }
+
+let isPhone = UIDevice.current.userInterfaceIdiom == .phone
 
 
 // MARK: Network Constants
@@ -57,5 +59,22 @@ enum NetworkConstants {
     
     func getUrl() -> String {
         return urlScheme + subDomain + baseUrl + endUrl
+    }
+}
+
+enum AppStoryboard: String {
+    
+    case homeLanding = "HomeLandingVC"
+    case searchPage = "SearchVC"
+    case sheetPresenter = "SheetPresenter"
+    
+    var instance: UIStoryboard {
+        return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
+    }
+    
+    
+    func viewController<T: UIViewController>(viewControllerClass: T.Type) -> T {
+        let storyboardID = (viewControllerClass as UIViewController.Type).storyboardID
+        return instance.instantiateViewController(withIdentifier: storyboardID) as! T
     }
 }

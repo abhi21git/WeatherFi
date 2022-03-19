@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Presenter View Controller-->
+        <scene sceneID="Jnb-61-4hg">
+            <objects>
+                <viewController storyboardIdentifier="PresenterViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="sAt-85-ADQ" customClass="PresenterViewController" customModule="WeatherFi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="01m-ie-I7v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-Mq-egE" userLabel="BottomSafeAreaView">
+                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgy-Mn-8yw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJH-dF-hjH">
+                                        <rect key="frame" x="189.5" y="449" width="35" height="3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="1hy-gw-Dl2">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="35" id="S8K-gR-2rn"/>
+                                        </constraints>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBD-wb-Dyh">
+                                        <rect key="frame" x="0.0" y="462" width="414" height="400"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="7lY-LN-YG0"/>
+                                            <constraint firstAttribute="width" constant="540" id="IDY-fC-s75"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="IDY-fC-s75"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="IDY-fC-s75"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="WGt-Xp-nBd" appends="YES" id="PlA-al-YhQ"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bBD-wb-Dyh" firstAttribute="centerY" secondItem="Bgy-Mn-8yw" secondAttribute="centerY" id="LLv-RD-0q7"/>
+                                    <constraint firstItem="bBD-wb-Dyh" firstAttribute="leading" secondItem="Bgy-Mn-8yw" secondAttribute="leading" id="ODR-uw-RBd"/>
+                                    <constraint firstItem="bBD-wb-Dyh" firstAttribute="top" secondItem="aJH-dF-hjH" secondAttribute="bottom" constant="10" id="Twm-It-LWs"/>
+                                    <constraint firstItem="bBD-wb-Dyh" firstAttribute="centerX" secondItem="Bgy-Mn-8yw" secondAttribute="centerX" id="dRC-jm-AR3"/>
+                                    <constraint firstItem="aJH-dF-hjH" firstAttribute="centerX" secondItem="Bgy-Mn-8yw" secondAttribute="centerX" id="nxr-KM-Bq3"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LLv-RD-0q7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="ODR-uw-RBd"/>
+                                        <include reference="LLv-RD-0q7"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PzS-X8-YRO"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="cw8-Mq-egE" firstAttribute="top" secondItem="PzS-X8-YRO" secondAttribute="bottom" id="3Yj-PX-sD1"/>
+                            <constraint firstItem="Bgy-Mn-8yw" firstAttribute="top" secondItem="01m-ie-I7v" secondAttribute="top" id="A3V-SV-Doo"/>
+                            <constraint firstAttribute="bottom" secondItem="Bgy-Mn-8yw" secondAttribute="bottom" id="AWl-Bx-cnh"/>
+                            <constraint firstAttribute="trailing" secondItem="cw8-Mq-egE" secondAttribute="trailing" id="H9l-yX-zLs"/>
+                            <constraint firstItem="bBD-wb-Dyh" firstAttribute="bottom" secondItem="PzS-X8-YRO" secondAttribute="bottom" id="TZ6-fr-uPd"/>
+                            <constraint firstItem="Bgy-Mn-8yw" firstAttribute="leading" secondItem="PzS-X8-YRO" secondAttribute="leading" id="Voe-nb-ZpH"/>
+                            <constraint firstItem="PzS-X8-YRO" firstAttribute="trailing" secondItem="Bgy-Mn-8yw" secondAttribute="trailing" id="bth-hb-bri"/>
+                            <constraint firstAttribute="bottom" secondItem="cw8-Mq-egE" secondAttribute="bottom" id="vAp-A9-Bbd"/>
+                            <constraint firstItem="cw8-Mq-egE" firstAttribute="leading" secondItem="01m-ie-I7v" secondAttribute="leading" id="wM6-0H-7us"/>
+                        </constraints>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <exclude reference="cw8-Mq-egE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="TZ6-fr-uPd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="baseView" destination="bBD-wb-Dyh" id="amJ-nI-CR6"/>
+                        <outlet property="baseViewHeightConstraint" destination="7lY-LN-YG0" id="Amb-SJ-ZLR"/>
+                        <outlet property="baseViewWidthConstraint" destination="IDY-fC-s75" id="ovH-7c-97u"/>
+                        <outlet property="handleView" destination="aJH-dF-hjH" id="HqS-g7-IHw"/>
+                        <outlet property="tapGestureView" destination="Bgy-Mn-8yw" id="rUO-lC-yVa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Go7-nP-ioW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nI8-e3-Y8N">
+                    <connections>
+                        <outlet property="delegate" destination="sAt-85-ADQ" id="ZZw-CQ-hJV"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="WGt-Xp-nBd">
+                    <connections>
+                        <outlet property="delegate" destination="sAt-85-ADQ" id="o5a-j5-OT0"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="6161" y="-3039"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

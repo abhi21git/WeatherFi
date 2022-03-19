@@ -15,12 +15,15 @@ class HomeLandingVC: BaseViewController {
     //MARK: - IBOutets
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var weatherIconImageView: UIImageView!
+    @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var airPressureLabel: UILabel!
     @IBOutlet weak var humudityLabel: UILabel!
     @IBOutlet weak var visibilityLabel: UILabel!
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var topStackView: UIStackView!
     @IBOutlet weak var midStackView: UIStackView!
     @IBOutlet weak var bottomStackView: UIStackView!
     @IBOutlet weak var searchButton: UIButton!
@@ -40,12 +43,13 @@ class HomeLandingVC: BaseViewController {
         super.viewDidLoad()
 
         setupUI()
-        fetchData(skipLocationRequest: newLocation != nil)
+        fetchData(skipLocationRequest: isSubDetailScreen())
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Add code here
+        BottomSheet?.controllerHeight = .zero
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,7 +60,6 @@ class HomeLandingVC: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Add code here
-
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -66,7 +69,9 @@ class HomeLandingVC: BaseViewController {
     
     //MARK: - IBActions
     @IBAction func searchButtonAction() {
-        
+        let detailVC = HomeLandingVC.instantiate(from: .homeLanding)
+        detailVC.newLocation = (20,80)
+        self.presentInBottomSheet(detailVC)
     }
     
     @IBAction func locationButtonAction() {
@@ -77,8 +82,10 @@ class HomeLandingVC: BaseViewController {
     
     //MARK: - Methods
     private func setupUI() {
-        searchButton.isHidden = newLocation != nil
-        locationButton.isHidden = newLocation != nil
+        topStackView.isHidden = isSubDetailScreen()
+        locationButton.isHidden = isSubDetailScreen()
+        mainStackView.spacing = isSubDetailScreen() ? 10 : 40
+        self.view.backgroundColor = isSubDetailScreen() ? .secondaryAccentColor : .accentColor
     }
     
     //MARK: Location handling
@@ -186,6 +193,10 @@ class HomeLandingVC: BaseViewController {
     private func isLocationAvailable() -> Bool {
         return homeVM.currentLocation != Constants.fallBackLocation()
     }
+    
+    private func isSubDetailScreen() -> Bool {
+        return newLocation != nil
+    }
 }
 
 //MARK: - HomeLandingVC Extension
@@ -198,7 +209,7 @@ extension HomeLandingVC: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+//        print(error.localizedDescription)
     }
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
