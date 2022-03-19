@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13185F2027E1103B00F7BBFD /* HomeLandingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13185F1F27E1103B00F7BBFD /* HomeLandingVC.storyboard */; };
+		13185F2027E1103B00F7BBFD /* HomeLanding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13185F1F27E1103B00F7BBFD /* HomeLanding.storyboard */; };
 		13185F2327E1109400F7BBFD /* HomeLandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13185F2227E1109400F7BBFD /* HomeLandingVC.swift */; };
 		13185F2A27E119B900F7BBFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13185F2927E119B900F7BBFD /* Constants.swift */; };
 		137E205E27E23FDA00AA4FF1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 137E205D27E23FDA00AA4FF1 /* Alamofire */; };
@@ -23,6 +23,13 @@
 		137E207827E5ADE400AA4FF1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E207727E5ADE400AA4FF1 /* UIViewController+Extension.swift */; };
 		137E207A27E5AEEB00AA4FF1 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E207927E5AEEB00AA4FF1 /* UIResponder+Extension.swift */; };
 		137E207E27E5B88200AA4FF1 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E207D27E5B88200AA4FF1 /* UIView+Extension.swift */; };
+		137E208227E5C23600AA4FF1 /* SearchPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 137E208127E5C23600AA4FF1 /* SearchPage.storyboard */; };
+		137E208427E5C24A00AA4FF1 /* SearchPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E208327E5C24A00AA4FF1 /* SearchPageVC.swift */; };
+		137E208827E5C33900AA4FF1 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E208727E5C33900AA4FF1 /* SearchViewModel.swift */; };
+		137E208A27E5C41F00AA4FF1 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E208927E5C41F00AA4FF1 /* SearchResultModel.swift */; };
+		137E208D27E5D71F00AA4FF1 /* TableViewGenricCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E208C27E5D71F00AA4FF1 /* TableViewGenricCell.swift */; };
+		137E209127E5D7A300AA4FF1 /* SearchResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E208F27E5D7A300AA4FF1 /* SearchResultTableCell.swift */; };
+		137E209227E5D7A300AA4FF1 /* SearchResultTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137E209027E5D7A300AA4FF1 /* SearchResultTableCell.xib */; };
 		13CC3B1E27E10B54008F9293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC3B1D27E10B54008F9293 /* AppDelegate.swift */; };
 		13CC3B2027E10B54008F9293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC3B1F27E10B54008F9293 /* SceneDelegate.swift */; };
 		13CC3B2727E10B59008F9293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CC3B2627E10B59008F9293 /* Assets.xcassets */; };
@@ -30,7 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13185F1F27E1103B00F7BBFD /* HomeLandingVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeLandingVC.storyboard; sourceTree = "<group>"; };
+		13185F1F27E1103B00F7BBFD /* HomeLanding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeLanding.storyboard; sourceTree = "<group>"; };
 		13185F2227E1109400F7BBFD /* HomeLandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLandingVC.swift; sourceTree = "<group>"; };
 		13185F2927E119B900F7BBFD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		137E206327E2403200AA4FF1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -44,6 +51,13 @@
 		137E207727E5ADE400AA4FF1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		137E207927E5AEEB00AA4FF1 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 		137E207D27E5B88200AA4FF1 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		137E208127E5C23600AA4FF1 /* SearchPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchPage.storyboard; sourceTree = "<group>"; };
+		137E208327E5C24A00AA4FF1 /* SearchPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageVC.swift; sourceTree = "<group>"; };
+		137E208727E5C33900AA4FF1 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		137E208927E5C41F00AA4FF1 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
+		137E208C27E5D71F00AA4FF1 /* TableViewGenricCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewGenricCell.swift; sourceTree = "<group>"; };
+		137E208F27E5D7A300AA4FF1 /* SearchResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableCell.swift; sourceTree = "<group>"; };
+		137E209027E5D7A300AA4FF1 /* SearchResultTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableCell.xib; sourceTree = "<group>"; };
 		13CC3B1A27E10B54008F9293 /* WeatherFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13CC3B1D27E10B54008F9293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13CC3B1F27E10B54008F9293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,8 +91,9 @@
 		13185F1E27E1102600F7BBFD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				137E207127E5AC9B00AA4FF1 /* SheetPresenter */,
 				13185F2127E1106600F7BBFD /* HomeScreen */,
+				137E207F27E5C1AF00AA4FF1 /* Search */,
+				137E207127E5AC9B00AA4FF1 /* SheetPresenter */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -97,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				13185F2227E1109400F7BBFD /* HomeLandingVC.swift */,
-				13185F1F27E1103B00F7BBFD /* HomeLandingVC.storyboard */,
+				13185F1F27E1103B00F7BBFD /* HomeLanding.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +148,7 @@
 			children = (
 				137E206B27E317C700AA4FF1 /* BaseViewController.swift */,
 				13185F2927E119B900F7BBFD /* Constants.swift */,
+				137E208C27E5D71F00AA4FF1 /* TableViewGenricCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -180,6 +196,51 @@
 				137E207327E5ACC000AA4FF1 /* SheetPresenter.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		137E207F27E5C1AF00AA4FF1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				137E208527E5C32100AA4FF1 /* Model */,
+				137E208027E5C22100AA4FF1 /* Views */,
+				137E208627E5C32700AA4FF1 /* ViewModel */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		137E208027E5C22100AA4FF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				137E208E27E5D77700AA4FF1 /* TableCells */,
+				137E208327E5C24A00AA4FF1 /* SearchPageVC.swift */,
+				137E208127E5C23600AA4FF1 /* SearchPage.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		137E208527E5C32100AA4FF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				137E208927E5C41F00AA4FF1 /* SearchResultModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		137E208627E5C32700AA4FF1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				137E208727E5C33900AA4FF1 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		137E208E27E5D77700AA4FF1 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				137E208F27E5D7A300AA4FF1 /* SearchResultTableCell.swift */,
+				137E209027E5D7A300AA4FF1 /* SearchResultTableCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		13CC3B1127E10B53008F9293 = {
@@ -280,7 +341,9 @@
 				13CC3B2A27E10B59008F9293 /* LaunchScreen.storyboard in Resources */,
 				137E207427E5ACC000AA4FF1 /* SheetPresenter.storyboard in Resources */,
 				13CC3B2727E10B59008F9293 /* Assets.xcassets in Resources */,
-				13185F2027E1103B00F7BBFD /* HomeLandingVC.storyboard in Resources */,
+				137E209227E5D7A300AA4FF1 /* SearchResultTableCell.xib in Resources */,
+				13185F2027E1103B00F7BBFD /* HomeLanding.storyboard in Resources */,
+				137E208227E5C23600AA4FF1 /* SearchPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,13 +356,18 @@
 			files = (
 				137E207827E5ADE400AA4FF1 /* UIViewController+Extension.swift in Sources */,
 				137E206827E2407500AA4FF1 /* NetworkManager.swift in Sources */,
+				137E208827E5C33900AA4FF1 /* SearchViewModel.swift in Sources */,
+				137E208427E5C24A00AA4FF1 /* SearchPageVC.swift in Sources */,
 				137E207627E5ACF300AA4FF1 /* SheetPresenter.swift in Sources */,
+				137E209127E5D7A300AA4FF1 /* SearchResultTableCell.swift in Sources */,
 				137E206427E2403200AA4FF1 /* UIImageView+Extension.swift in Sources */,
 				137E206A27E3177B00AA4FF1 /* HomeViewModel.swift in Sources */,
 				13CC3B1E27E10B54008F9293 /* AppDelegate.swift in Sources */,
 				13CC3B2027E10B54008F9293 /* SceneDelegate.swift in Sources */,
 				137E206C27E317C700AA4FF1 /* BaseViewController.swift in Sources */,
 				137E207E27E5B88200AA4FF1 /* UIView+Extension.swift in Sources */,
+				137E208D27E5D71F00AA4FF1 /* TableViewGenricCell.swift in Sources */,
+				137E208A27E5C41F00AA4FF1 /* SearchResultModel.swift in Sources */,
 				137E207A27E5AEEB00AA4FF1 /* UIResponder+Extension.swift in Sources */,
 				137E206E27E32E4F00AA4FF1 /* HomeWeatherDataModel.swift in Sources */,
 				13185F2327E1109400F7BBFD /* HomeLandingVC.swift in Sources */,
@@ -446,11 +514,12 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherFi/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would need your location to fetch current weather";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location required to fetch weather details";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We would need your location to fetch current weather";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location required to fetch weather details";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = HomeLandingVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeLanding;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -479,11 +548,12 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherFi/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would need your location to fetch current weather";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location required to fetch weather details";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We would need your location to fetch current weather";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location required to fetch weather details";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = HomeLandingVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeLanding;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

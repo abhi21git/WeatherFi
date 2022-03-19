@@ -7,41 +7,47 @@
 
 import UIKit
 
+//MARK: - Base View Controller
 class BaseViewController: UIViewController {
-    
+
+
     //MARK: - Properties
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Add code here
+
+        configureUI()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         // Add code here
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         // Add code here
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         // Add code here
-        
+
     }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         // Add code here
     }
-    
+
     //MARK: - Methods
     private func configureUI() {
         self.view.backgroundColor = UIColor.accentColor
     }
-    
+
 }
 
 //MARK: - HomeLandingVC Extension
 extension HomeLandingVC {
-    
+
 }

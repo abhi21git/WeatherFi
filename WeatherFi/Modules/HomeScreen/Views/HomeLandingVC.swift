@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-//MARK: - HomeLandingVC
+//MARK: - Home Landing VC
 class HomeLandingVC: BaseViewController {
     
     
@@ -34,9 +34,6 @@ class HomeLandingVC: BaseViewController {
     fileprivate var locationManager = CLLocationManager()
 
     var newLocation: Location?
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -49,7 +46,6 @@ class HomeLandingVC: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Add code here
-        BottomSheet?.controllerHeight = .zero
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,9 +65,8 @@ class HomeLandingVC: BaseViewController {
     
     //MARK: - IBActions
     @IBAction func searchButtonAction() {
-        let detailVC = HomeLandingVC.instantiate(from: .homeLanding)
-        detailVC.newLocation = (20,80)
-        self.presentInBottomSheet(detailVC)
+        let searchVC = SearchPageVC.instantiate(from: .searchPage)
+        self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
     @IBAction func locationButtonAction() {

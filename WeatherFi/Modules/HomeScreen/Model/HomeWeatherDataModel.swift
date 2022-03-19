@@ -16,7 +16,7 @@ struct HomeWeatherDataModel: Decodable {
     let date: Double
     let name: String
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case coordinates = "coord"
         case mainData = "main"
         case date = "dt"
@@ -38,7 +38,7 @@ struct Coordinates: Decodable {
     let latitude: Double
     let longitude: Double
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case latitude = "lat"
         case longitude = "lon"
     }
@@ -55,7 +55,7 @@ struct MainWeatherData: Decodable {
     let pressure: Int
     let humidity: Int
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case temperature = "temp"
         case pressure, humidity
     }

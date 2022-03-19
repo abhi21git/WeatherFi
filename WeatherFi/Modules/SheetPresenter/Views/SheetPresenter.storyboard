@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -14,18 +14,18 @@
             <objects>
                 <viewController storyboardIdentifier="PresenterViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="sAt-85-ADQ" customClass="PresenterViewController" customModule="WeatherFi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="01m-ie-I7v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-Mq-egE" userLabel="BottomSafeAreaView">
-                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgy-Mn-8yw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJH-dF-hjH">
-                                        <rect key="frame" x="189.5" y="449" width="35" height="3"/>
+                                        <rect key="frame" x="170" y="120.5" width="35" height="3"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="3" id="1hy-gw-Dl2">
@@ -35,11 +35,10 @@
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBD-wb-Dyh">
-                                        <rect key="frame" x="0.0" y="462" width="414" height="400"/>
+                                        <rect key="frame" x="0.0" y="133.5" width="375" height="533.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="7lY-LN-YG0"/>
                                             <constraint firstAttribute="width" constant="540" id="IDY-fC-s75"/>
                                         </constraints>
                                         <variation key="default">
@@ -59,6 +58,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="bBD-wb-Dyh" firstAttribute="height" secondItem="Bgy-Mn-8yw" secondAttribute="height" multiplier="0.8" id="5yf-qk-1ru"/>
                                     <constraint firstItem="bBD-wb-Dyh" firstAttribute="centerY" secondItem="Bgy-Mn-8yw" secondAttribute="centerY" id="LLv-RD-0q7"/>
                                     <constraint firstItem="bBD-wb-Dyh" firstAttribute="leading" secondItem="Bgy-Mn-8yw" secondAttribute="leading" id="ODR-uw-RBd"/>
                                     <constraint firstItem="bBD-wb-Dyh" firstAttribute="top" secondItem="aJH-dF-hjH" secondAttribute="bottom" constant="10" id="Twm-It-LWs"/>
@@ -72,8 +72,8 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <exclude reference="ODR-uw-RBd"/>
                                         <include reference="LLv-RD-0q7"/>
+                                        <exclude reference="ODR-uw-RBd"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -103,7 +103,7 @@
                     </view>
                     <connections>
                         <outlet property="baseView" destination="bBD-wb-Dyh" id="amJ-nI-CR6"/>
-                        <outlet property="baseViewHeightConstraint" destination="7lY-LN-YG0" id="Amb-SJ-ZLR"/>
+                        <outlet property="baseViewHeightConstraint" destination="5yf-qk-1ru" id="VMX-mK-tXB"/>
                         <outlet property="baseViewWidthConstraint" destination="IDY-fC-s75" id="ovH-7c-97u"/>
                         <outlet property="handleView" destination="aJH-dF-hjH" id="HqS-g7-IHw"/>
                         <outlet property="tapGestureView" destination="Bgy-Mn-8yw" id="rUO-lC-yVa"/>
