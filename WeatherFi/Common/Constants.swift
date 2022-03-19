@@ -12,7 +12,7 @@ typealias Location = (latitude: Double, longitude: Double)
 
 // MARK: App Constants
 enum Constants: String {
-    case abc = "abc"
+    case searchHistory = "SavedSearches"
 
     static func fallBackLocation() -> Location {
         return (21.1458, 79.0882)

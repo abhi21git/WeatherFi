@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SearchResultDataModel: Decodable {
+struct SearchResultDataModel: Codable {
     let name: String
     let latitude: Double
     let longitude: Double

@@ -97,6 +97,26 @@ class SearchPageVC: BaseViewController {
         detailVC.newLocation = location
         self.presentInBottomSheet(detailVC)
     }
+    
+    fileprivate func saveSearchHistory(of query: SearchResultDataModel) {
+        do {
+            let defaults = UserDefaults.standard
+            var history = getSearchHistory()
+            history.append(query)
+            history = history.suffix(5)
+            try defaults.encode(history, forKey:Constants.searchHistory.rawValue)
+        } catch {
+            // Saving failed
+        }
+    }
+    
+    fileprivate func getSearchHistory() -> [SearchResultDataModel] {
+        do {
+            return try UserDefaults.standard.decode([SearchResultDataModel].self, forKey: Constants.searchHistory.rawValue)
+        } catch {
+            return []
+        }
+    }
 
 }
 
@@ -112,18 +132,27 @@ extension SearchPageVC: UITextFieldDelegate {
 
 extension SearchPageVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchVM.searchData.count
+        if searchVM.searchData.isEmpty {
+            return getSearchHistory().count
+        } else {
+            return searchVM.searchData.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let resultCell: SearchResultTableCell = tableView.dequeueReusableCell(for: indexPath)
-        resultCell.configureCell(with: searchVM.searchData[indexPath.row])
+        if searchVM.searchData.isEmpty {
+            resultCell.configureCell(with: getSearchHistory()[indexPath.row])
+        } else {
+            resultCell.configureCell(with: searchVM.searchData[indexPath.row])
+        }
         return resultCell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let location: Location = (searchVM.searchData[indexPath.row].latitude, searchVM.searchData[indexPath.row].longitude)
         openDetailPage(for: (location))
+        saveSearchHistory(of: searchVM.searchData[indexPath.row])
     }
 
 }

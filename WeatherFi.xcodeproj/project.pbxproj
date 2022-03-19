@@ -30,6 +30,7 @@
 		137E208D27E5D71F00AA4FF1 /* TableViewGenricCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E208C27E5D71F00AA4FF1 /* TableViewGenricCell.swift */; };
 		137E209127E5D7A300AA4FF1 /* SearchResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E208F27E5D7A300AA4FF1 /* SearchResultTableCell.swift */; };
 		137E209227E5D7A300AA4FF1 /* SearchResultTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137E209027E5D7A300AA4FF1 /* SearchResultTableCell.xib */; };
+		137E209427E5E7DA00AA4FF1 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E209327E5E7DA00AA4FF1 /* UserDefaults+Extension.swift */; };
 		13CC3B1E27E10B54008F9293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC3B1D27E10B54008F9293 /* AppDelegate.swift */; };
 		13CC3B2027E10B54008F9293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC3B1F27E10B54008F9293 /* SceneDelegate.swift */; };
 		13CC3B2727E10B59008F9293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CC3B2627E10B59008F9293 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		137E208C27E5D71F00AA4FF1 /* TableViewGenricCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewGenricCell.swift; sourceTree = "<group>"; };
 		137E208F27E5D7A300AA4FF1 /* SearchResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableCell.swift; sourceTree = "<group>"; };
 		137E209027E5D7A300AA4FF1 /* SearchResultTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableCell.xib; sourceTree = "<group>"; };
+		137E209327E5E7DA00AA4FF1 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		13CC3B1A27E10B54008F9293 /* WeatherFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13CC3B1D27E10B54008F9293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13CC3B1F27E10B54008F9293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,8 +148,8 @@
 		13185F2827E1199C00F7BBFD /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				137E206B27E317C700AA4FF1 /* BaseViewController.swift */,
 				13185F2927E119B900F7BBFD /* Constants.swift */,
+				137E206B27E317C700AA4FF1 /* BaseViewController.swift */,
 				137E208C27E5D71F00AA4FF1 /* TableViewGenricCell.swift */,
 			);
 			path = Common;
@@ -161,6 +163,7 @@
 				137E207727E5ADE400AA4FF1 /* UIViewController+Extension.swift */,
 				137E207927E5AEEB00AA4FF1 /* UIResponder+Extension.swift */,
 				137E207D27E5B88200AA4FF1 /* UIView+Extension.swift */,
+				137E209327E5E7DA00AA4FF1 /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				137E206E27E32E4F00AA4FF1 /* HomeWeatherDataModel.swift in Sources */,
 				13185F2327E1109400F7BBFD /* HomeLandingVC.swift in Sources */,
 				13185F2A27E119B900F7BBFD /* Constants.swift in Sources */,
+				137E209427E5E7DA00AA4FF1 /* UserDefaults+Extension.swift in Sources */,
 				137E207027E4CD1900AA4FF1 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
